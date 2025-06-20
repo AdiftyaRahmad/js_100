@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Segilima</title>
+</head>
+<body>
+  <h2>Hitung Luas dan Keliling Segilima</h2>
+  <label>Sisi: <input type="number" id="sisi" /></label>
+  <button onclick="hitung()">Hitung</button>
+
+  <p id="hasil"></p>
+
+  <script>
+    function hitung() {
+      const sisi = parseFloat(document.getElementById("sisi").value);
+
+      if (isNaN(sisi) || sisi <= 0) {
+        document.getElementById("hasil").textContent = "Masukkan sisi yang valid!";
+        return;
+      }
+
+      const keliling = 5 * sisi;
+      const luas = (5 / 4) * sisi * sisi * (1 / Math.tan(Math.PI / 5));
+
+      document.getElementById("hasil").textContent =
+        `Luas: ${luas.toFixed(2)}, Keliling: ${keliling}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Volume Bola</title>
+</head>
+<body>
+    <h2>Hitung Volume Bola</h2>
+    <label for="jariJari">Masukkan jari-jari bola (cm): </label>
+    <input type="number" id="jariJari" required>
+    <button onclick="hitungVolume()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungVolume() {
+            const jariJari = parseFloat(document.getElementById('jariJari').value);
+            if (isNaN(jariJari) || jariJari <= 0) {
+                alert("Jari-jari tidak valid");
+                return;
+            }
+            const volume = (4/3) * Math.PI * Math.pow(jariJari, 3);
+            document.getElementById('hasil').innerText = `Volume bola adalah ${volume.toFixed(2)} cm³`;
+        }
+    </script>
+</body>
+</html>

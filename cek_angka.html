@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Positif / Negatif</title></head>
+<body>
+  <h2>Deteksi Positif / Negatif</h2>
+  <input type="number" id="angka" placeholder="Masukkan angka"><br><br>
+  <button onclick="cek()">Cek</button>
+  <p id="hasil"></p>
+  <script>
+    function cek() {
+      let n = parseFloat(document.getElementById("angka").value);
+      let hasil = n > 0 ? "Positif" : n < 0 ? "Negatif" : "Nol";
+      document.getElementById("hasil").innerText = hasil;
+    }
+  </script>
+</body>
+</html>

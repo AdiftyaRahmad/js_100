@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Kalkulator BMI</title></head>
+<body>
+  <h2>Kalkulator BMI</h2>
+  <input type="number" id="berat" placeholder="Berat (kg)"><br><br>
+  <input type="number" id="tinggi" placeholder="Tinggi (cm)"><br><br>
+  <button onclick="hitung()">Hitung</button>
+  <p id="hasil"></p>
+  <script>
+    function hitung() {
+      let b = parseFloat(document.getElementById("berat").value);
+      let t = parseFloat(document.getElementById("tinggi").value) / 100;
+      let bmi = b / (t * t);
+      document.getElementById("hasil").innerText = "BMI Anda: " + bmi.toFixed(2);
+    }
+  </script>
+</body>
+</html>

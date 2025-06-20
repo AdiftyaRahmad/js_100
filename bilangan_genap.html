@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Menampilkan Bilangan Genap</h3>
+  <label>Masukkan bilangan (pisahkan dengan koma):</label><br>
+  <input type="text" id="inputBilangan" placeholder="Contoh: 1,2,3,4,5"><br><br>
+  <button onclick="tampilkanGenap()">Tampilkan Genap</button>
+  <h4>Hasil (Genap Saja):</h4>
+  <p id="outputGenap"></p>
+  <script>
+    function tampilkanGenap() {
+      let input = document.getElementById("inputBilangan").value;
+      let angka = input.split(',').map(x => parseInt(x.trim()));
+      let genap = angka.filter(n => !isNaN(n) && n % 2 === 0);
+      document.getElementById("outputGenap").innerText = genap.join(', ');
+    }
+  </script>
+</body>
+</html>

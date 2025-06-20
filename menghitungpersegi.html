@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <center>
+  <h3>Persegi</h3>
+  <input id="sisi" placeholder="Sisi" type="number">
+  <button onclick="hitung()">Hitung</button>
+  <p id="hasil1"></p>
+  </center>
+  <script>
+    function hitung() {
+      let s = parseFloat(document.getElementById("sisi").value);
+      let luas = s * s;
+      let kel = 4 * s;
+      document.getElementById("hasil1").innerText = `Luas: ${luas}, Keliling: ${kel}`;
+    }
+  </script>
+</body>
+</html>

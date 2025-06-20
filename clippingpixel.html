@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Clipping Nilai Dinamis (0–255)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Clipping Nilai Dinamis (0–255)</h2>
+
+  <label>Masukkan daftar nilai (pisahkan dengan koma):</label>
+  <input type="text" id="inputNilai" placeholder="Contoh: 260, -10, 120, 300, 255, -5">
+
+  <button onclick="prosesClipping()">Proses Clipping</button>
+
+  <div class="output">
+    <p><strong>Nilai sebelum clipping:</strong> <span id="sebelum"></span></p>
+    <p><strong>Nilai setelah clipping:</strong> <span id="sesudah"></span></p>
+  </div>
+
+  <script>
+    function clipping(value) {
+      if (value > 255) return 255;
+      if (value < 0) return 0;
+      return value;
+    }
+
+    function prosesClipping() {      const inputText = document.getElementById("inputNilai").value;
+      const inputArray = inputText.split(',').map(v => parseFloat(v.trim()));
+
+      const clippedArray = inputArray.map(clipping);
+
+      document.getElementById("sebelum").innerText = inputArray.join(", ");
+      document.getElementById("sesudah").innerText = clippedArray.join(", ");
+    }
+  </script>
+
+</body>
+</html>

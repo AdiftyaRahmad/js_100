@@ -3,37 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabung</title>
+  <title>Kubus</title>
 </head>
 <body>
-  <center>
-  <h1>Rumus Tabung</h1>
-  <label for="jari">Jari-jari</label>
-  <input type="number" id="jari">
-  <label for="tinggi">Tinggi</label>
-  <input type="number" id="tinggi">
+  <h1>Rumus Kubus</h1>
+  <label for="sisi">Sisi</label>
+  <input type="number" id="sisi">
   <button id="hitung">Hitung</button>
   <p>
-    Volume : <span id="Volume"></span> 
-    <br>
+    Volume : <span id="Volume"></span>
+  </p>
+  <p>
     Luas     : <span id="luas"></span>
   </p>
-  </center>
 
   <script>
     const phi = 3.14
-    const jari = document.getElementById('jari')
-    const tinggi = document.getElementById('tinggi')
+    const sisi = document.getElementById('sisi')
     const hitung = document.getElementById('hitung')
 
     const labelVolume = document.getElementById('Volume')
     const labelluas = document.getElementById('luas')
 
     hitung.addEventListener("click", function(){
-      let Volume = phi * parseInt(jari.value)**2 * parseInt(tinggi.value)
+      let Volume = parseInt(sisi.value) ** 3
       labelVolume.innerHTML = Volume + " cm<sup>3</sup>"
 
-      let luas = 2 * phi * parseInt(jari.value) * parseInt(tinggi.value) + 2 * phi * parseInt(jari.value)**2
+      let luas = 6 * parseInt(sisi.value) ** 2
       labelluas.innerHTML = luas + " cm<sup>2</sup>"
     })
 

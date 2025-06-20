@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tarif Parkir Per Jam</title>
+</head>
+<body>
+  <h3>Menghitung Tarif Parkir Per-jam</h3>
+  <label>Berapa Jam Anda Parkir?:</label><br>
+  <input type="number" id="jamParkir" min="0"><br><br>
+  <button onclick="hitungTarif()">Hitung Tarif</button>
+  <p id="hasilTarif"></p>
+
+  <script>
+    function hitungTarif() {
+      let jam = parseInt(document.getElementById("jamParkir").value);
+      let tarif = 0;
+      if (isNaN(jam) || jam < 0) {
+        document.getElementById("hasilTarif").innerText = "Masukkan jumlah jam yang valid!";
+        return;
+      }
+      if (jam <= 1) {
+        tarif = 3000;
+      } else {
+        tarif = 3000 + (jam - 1) * 1000;
+      }
+      document.getElementById("hasilTarif").innerText = `Tarif Parkir Yang Harus Dibayar: Rp ${tarif}`;
+    }
+  </script>
+</body>
+</html>

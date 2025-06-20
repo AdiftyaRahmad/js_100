@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><title>Timer Hitung Mundur</title></head>
+<body>
+
+<h2>Timer Hitung Mundur</h2>
+
+<label>Masukkan waktu (detik):</label><br>
+<input type="number" id="waktu"><br><br>
+
+<button onclick="mulaiTimer()">Mulai</button>
+<button onclick="resetTimer()">Reset</button><br><br>
+
+<p id="tampil">Sisa waktu: </p>
+
+<script>
+  let interval;
+  let sisaDetik = 0;
+
+  function mulaiTimer() {
+    clearInterval(interval); // hentikan timer sebelumnya jika ada
+    sisaDetik = parseInt(document.getElementById("waktu").value);
+    tampilkanWaktu();
+
+    interval = setInterval(() => {
+      sisaDetik--;
+      tampilkanWaktu();
+
+      if (sisaDetik <= 0) {
+        clearInterval(interval);
+        document.getElementById("tampil").innerText = "Waktu habis!";
+      }
+    }, 1000);
+  }
+
+  function tampilkanWaktu() {
+    document.getElementById("tampil").innerText = "Sisa waktu: " + sisaDetik + " detik";
+  }
+
+  function resetTimer() {
+    clearInterval(interval);
+    document.getElementById("tampil").innerText = "Sisa waktu: ";
+    document.getElementById("waktu").value = "";
+  }
+</script>
+
+</body>
+</html>

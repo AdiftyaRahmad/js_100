@@ -1,0 +1,26 @@
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h2>Tagihan Internet Bulanan</h2>
+
+<label>Pilih Paket:</label><br>
+<select id="paket">
+  <option value="150000">Paket A (20Mbps) - Rp150.000</option>
+  <option value="250000">Paket B (50Mbps) - Rp250.000</option>
+  <option value="400000">Paket C (100Mbps) - Rp400.000</option>
+</select><br><br>
+
+<button onclick="hitungInternet()">Hitung</button><br><br>
+
+<p id="hasilInternet">Bayar: Rp 0</p>
+
+<script>
+function hitungInternet() {
+  var harga = parseInt(document.getElementById("paket").value);
+  document.getElementById("hasilInternet").innerText = "Bayar: Rp " + harga.toLocaleString("id-ID");
+}
+</script>
+</body>
+</html>

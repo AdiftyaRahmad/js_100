@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jam</title>
+</head>
+<body>
+<center>
+  <h1>
+  <div>
+    <span id="jam">00</span>
+    <span id="menit">00</span>
+    <span id="detik">00</span>
+  </div>
+  </h1>
+</center>
+<script>
+
+      const divJam = document.querySelector("#jam")
+    let jam = Number(divJam.textContent)
+
+    const divMenit = document.querySelector("#menit")
+    let menit = Number(divMenit.textContent)
+
+    const divDetik = document.querySelector("#detik")
+    let detik = Number(divDetik.textContent)
+    const clockCounter = () => {
+        detik++
+        if(detik == 60) {
+            menit ++
+            detik = 0
+        }
+        if(menit == 60) {
+            jam++
+            menit = 0
+            detik = 0
+        }
+      
+          divDetik.textContent = detik < 10 ? `0${detik}`: detik
+          divMenit.textContent = menit < 10 ?`0${menit}`: menit
+          divJam.textContent = jam < 10 ?`0${jam}`: jam
+    }
+    setInterval(clockCounter,1000)
+  </script>
+</body>
+</html>

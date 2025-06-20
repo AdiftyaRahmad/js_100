@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Perulangan</title></head>
+<body>
+  <ul id="daftar"></ul>
+  <script>
+    const daftar = document.getElementById("daftar");
+    for(let i = 1; i <= 10; i++) {
+      const item = document.createElement("li");
+      item.textContent = "Item " + i;
+      daftar.appendChild(item);
+    }
+  </script>
+</body>
+</html>

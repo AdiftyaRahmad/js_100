@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Menampilkan Bilangan Ganjil</h3>
+  <label>Masukkan bilangan (pisahkan dengan koma):</label><br>
+  <input type="text" id="inputBilangan" placeholder="Contoh: 1,2,3,4,5"><br><br>
+  <button onclick="tampilkanGanjil()">Tampilkan Ganjil</button>
+  <h4>Hasil (Ganjil Saja):</h4>
+  <p id="outputGanjil"></p>
+
+  <script>
+    function tampilkanGanjil() {
+      let input = document.getElementById("inputBilangan").value;
+      let angka = input.split(',').map(x => parseInt(x.trim()));
+      let ganjil = angka.filter(n => !isNaN(n) && n % 2 !== 0);
+      document.getElementById("outputGanjil").innerText = ganjil.join(', ');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h2>Hitung Tagihan Air</h2>
+<label>Pemakaian (m³):</label><br>
+<input type="number" id="air"><br><br>
+<button onclick="hitungAir()">Hitung</button><br><br>
+<p id="hasilAir">Bayar: Rp 0</p>
+<script>
+function hitungAir() {
+  var m3 = parseFloat(document.getElementById("air").value);
+  var tarif = 3000;
+  if (m3 < 10) m3 = 10;
+  var total = m3 * tarif;
+  document.getElementById("hasilAir").innerText = "Bayar: Rp " + total.toLocaleString("id-ID");
+}
+</script>
+</body>
+</html>

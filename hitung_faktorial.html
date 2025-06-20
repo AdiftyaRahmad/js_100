@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hitung Faktorial</title>
+</head>
+<body>
+  <h2>Hitung Faktorial</h2>
+  <input type="number" id="n" placeholder="Angka"><br><br>
+  <button onclick="faktorial()">Hitung</button>
+  <p id="hasil"></p>
+
+  <script>
+    function faktorial() {
+      let n = parseInt(document.getElementById("n").value);
+      let hasil = 1;
+      for (let i = 1; i <= n; i++) {
+        hasil *= i;
+      }
+      document.getElementById("hasil").innerText = "Faktorial: " + hasil;
+    }
+  </script>
+</body>
+</html>

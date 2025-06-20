@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Panjang Teks</title></head>
+<body>
+  <input type="text" id="inputTeks" oninput="hitungPanjang()">
+  <p>Panjang: <span id="panjang">0</span> karakter</p>
+  <script>
+    function hitungPanjang() {
+      const panjang = document.getElementById("inputTeks").value.length;
+      document.getElementById("panjang").innerText = panjang;
+    }
+  </script>
+</body>
+</html>

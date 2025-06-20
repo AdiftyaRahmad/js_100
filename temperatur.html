@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.</title>
+</head>
+<body>
+  <center>
+    <div class="box">
+        <p class="header">Konversi Temperatur</p>
+        <div class="input-container">
+            <p class="text1">Celcius :</p>
+            <input type="number" placeholder="Enter Temperature" id="celcius">
+        </div>
+        <div class="input-container">
+            <p class="text2">Fahrenheit :</p>
+            <input type="number" placeholder="Enter Temperature" id="fahrenheit">
+        </div>
+        <div class="input-container">
+            <p class="text3">Kelvin :</p>
+            <input type="number" placeholder="Enter Temperature" id="kelvin">
+        </div>
+    </div>
+  </center>
+<script>
+  const celsius = document.querySelector("#celcius");
+const fahrenheit = document.querySelector("#fahrenheit");
+const kelvin = document.querySelector("#kelvin");
+
+window.addEventListener("load", () => celcius.focus());
+
+celcius.addEventListener("input", () => {
+    
+    fahrenheit.value = (parseFloat(celcius.value * 9) / 5 + 32)
+    kelvin.value     = (parseFloat(celcius.value) + 273.15).toFixed(2);
+
+    if (!celsius.value) {
+        fahrenheit.value = "";
+        kelvin.value     = "";
+    }
+
+});
+
+fahrenheit.addEventListener("input", () => {
+    
+    celcius.value = (parseFloat(5/9*(fahrenheit.value - 32))).toFixed(2);
+    kelvin.value  = (parseFloat(5/9*(fahrenheit.value - 32) + 273.15)).toFixed(2);
+
+    if (!fahrenheit.value) {
+        celcius.value = "";
+        kelvin.value  = "";
+    }
+
+});
+
+kelvin.addEventListener("input", () => {
+    
+    celcius.value    = (parseFloat(kelvin.value) - 273.15).toFixed(2);
+    fahrenheit.value = (parseFloat(9/5*(kelvin.value - 273.15))).toFixed(2);
+
+    if (!kelvin.value) {
+        fahrenheit.value = "";
+        celsius.value    = "";
+    }
+
+})
+</script>
+</body>
+</html>

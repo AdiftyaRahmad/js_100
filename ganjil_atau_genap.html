@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ganjil Genap</title>
+</head>
+<body>
+  <h2>Deteksi Ganjil / Genap</h2>
+  <input type="number" id="angka" placeholder="Masukkan angka"><br><br>
+  <button onclick="cek()">Cek</button>
+  <p id="hasil"></p>
+
+  <script>
+    function cek() {
+      let a = parseInt(document.getElementById("angka").value);
+      document.getElementById("hasil").innerText = (a % 2 === 0) ? "Genap" : "Ganjil";
+    }
+  </script>
+</body>
+</html>

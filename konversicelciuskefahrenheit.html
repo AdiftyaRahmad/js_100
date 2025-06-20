@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Konversi Suhu</title></head>
+<body>
+  <input id="celsius" placeholder="Celsius" type="number">
+  <button onclick="konversi()">Konversi</button>
+  <p id="output"></p>
+  <script>
+    function konversi() {
+      const c = parseFloat(document.getElementById("celsius").value);
+      const f = (c * 9/5) + 32;
+      document.getElementById("output").innerText = `${c}°C = ${f.toFixed(2)}°F`;
+    }
+  </script>
+</body>
+</html>

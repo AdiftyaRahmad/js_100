@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Hover Teks</title></head>
+<body>
+  <p id="teks" onmouseover="ubah()" onmouseout="balik()">Arahkan mouse ke sini!</p>
+  <script>
+    function ubah() {
+      document.getElementById("teks").innerText = "Cursor sedang di sini!";
+    }
+    function balik() {
+      document.getElementById("teks").innerText = "Arahkan Cursor ke sini!";
+    }
+  </script>
+</body>
+</html>

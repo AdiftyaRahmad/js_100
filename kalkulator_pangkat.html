@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h2>Kalkulator Pangkat</h2>
+<input id="angka" placeholder="Angka"><br>
+<input id="pangkat" placeholder="Pangkat"><br>
+<button onclick="hitung()">Hitung</button>
+<p id="hasil"></p>
+<script>
+function hitung() {
+  let a = parseFloat(document.getElementById("angka").value);
+  let p = parseFloat(document.getElementById("pangkat").value);
+  document.getElementById("hasil").innerText = "Hasil: " + Math.pow(a, p);
+}
+</script>
+</body>
+</html>

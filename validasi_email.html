@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Validasi Email</title>
+</head>
+<body>
+  <h2>Validasi Alamat Email</h2>
+  <input type="text" id="email" placeholder="Masukkan email"><br><br>
+  <button onclick="cek()">Cek</button>
+  <p id="hasil"></p>
+
+  <script>
+    function cek() {
+      let email = document.getElementById("email").value;
+      let valid = email.includes("@") && email.includes(".");
+      document.getElementById("hasil").innerText = valid ? "Email valid" : "Email tidak valid";
+    }
+  </script>
+</body>
+</html>

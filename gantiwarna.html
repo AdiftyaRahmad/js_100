@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ganti Warna</title></head>
+<body>
+  <select onchange="gantiWarna(this.value)">
+    <option value="">Pilih warna</option>
+    <option value="red">Merah</option>
+    <option value="green">Hijau</option>
+    <option value="blue">Biru</option>
+  </select>
+  <script>
+    function gantiWarna(warna) {
+      document.body.style.backgroundColor = warna;
+    }
+  </script>
+</body>
+</html>

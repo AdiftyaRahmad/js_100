@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Simulasi Dadu</title></head>
+<body>
+  <h2>Simulasi Dadu</h2>
+  <button onclick="lempar()">Lempar Dadu</button>
+  <p id="hasil"></p>
+  <script>
+    function lempar() {
+      let angka = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("hasil").innerText = "Hasil: " + angka;
+    }
+  </script>
+</body>
+</html>

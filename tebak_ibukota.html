@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Sederhana</title>
+</head>
+<body>
+
+<h2>Kuis: Ibu Kota Indonesia</h2>
+
+<p>Apa ibu kota Indonesia?</p>
+
+<input type="radio" name="jawaban" value="Jakarta" id="jakarta">
+<label for="jakarta">Jakarta</label><br>
+
+<input type="radio" name="jawaban" value="Surabaya" id="surabaya">
+<label for="surabaya">Surabaya</label><br>
+
+<input type="radio" name="jawaban" value="Bandung" id="bandung">
+<label for="bandung">Bandung</label><br><br>
+
+<button onclick="cekJawaban()">Kirim Jawaban</button><br><br>
+
+<p id="hasil"></p>
+
+<script>
+function cekJawaban() {
+  const pilihan = document.getElementsByName("jawaban");
+  let jawaban = "";
+  
+  for (let i = 0; i < pilihan.length; i++) {
+    if (pilihan[i].checked) {
+      jawaban = pilihan[i].value;
+      break;
+    }
+  }
+
+  if (jawaban === "") {
+    document.getElementById("hasil").innerText = "Silakan pilih jawaban terlebih dahulu.";
+  } else if (jawaban === "Jakarta") {
+    document.getElementById("hasil").innerText = "Benar! Jakarta adalah ibu kota Indonesia.";
+  } else {
+    document.getElementById("hasil").innerText = "Salah. Jawaban yang benar adalah Jakarta.";
+  }
+}
+</script>
+
+</body>
+</html>

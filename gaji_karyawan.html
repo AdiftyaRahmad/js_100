@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Gaji Karyawan</title>
+</head>
+<body>
+
+<h2>Hitung Gaji Karyawan</h2>
+
+<label>Jumlah Karyawan:</label><br>
+<input type="number" id="jumlahKaryawan"><br><br>
+
+<button onclick="buatForm()">Masukkan Data Karyawan</button><br><br>
+
+<div id="formKaryawan"></div>
+<div id="hasil"></div>
+
+<script>
+const gajiPerJam = 10000;
+
+function buatForm() {
+  const jumlah = parseInt(document.getElementById("jumlahKaryawan").value);
+  const container = document.getElementById("formKaryawan");
+  container.innerHTML = "";
+
+  for (let i = 0; i < jumlah; i++) {
+    container.innerHTML += `
+      <label>Jam kerja karyawan ${i + 1}:</label><br>
+      <input type="number" id="jam${i}"><br><br>
+    `;
+  }
+
+  container.innerHTML += `<button onclick="hitungGaji(${jumlah})">Hitung Total Gaji</button>`;
+}
+
+function hitungGaji(jumlah) {
+  let totalGajiPerusahaan = 0;
+  let output = "";
+
+  for (let i = 0; i < jumlah; i++) {
+    const jamKerja = parseFloat(document.getElementById("jam" + i).value);
+    let totalGaji = 0;
+
+    if (jamKerja > 7) {
+      const jamLembur = jamKerja - 7;
+      const gajiReguler = 7 * gajiPerJam;
+      const gajiLembur = jamLembur * gajiPerJam * 1.5;
+      totalGaji = gajiReguler + gajiLembur;
+    } else {
+      totalGaji = jamKerja * gajiPerJam;
+    }
+
+    totalGajiPerusahaan += totalGaji;
+    output += `Karyawan ${i + 1} - Total gaji: Rp ${totalGaji.toFixed(0)}<br>`;
+  }
+
+  output += `<br><strong>Total gaji seluruh karyawan: Rp ${totalGajiPerusahaan.toFixed(0)}</strong>`;
+  document.getElementById("hasil").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

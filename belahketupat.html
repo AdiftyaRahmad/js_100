@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <center>
+  <h3>Belah Ketupat</h3>
+<input id="d1" placeholder="Diagonal 1" type="number">
+<input id="d2" placeholder="Diagonal 2" type="number">
+<input id="sisiBK" placeholder="Sisi" type="number">
+<button onclick="hitungBK()">Hitung</button>
+<p id="hasil7"></p>
+  </center>
+<script>
+  function hitungBK() {
+    let d1 = parseFloat(document.getElementById("d1").value);
+    let d2 = parseFloat(document.getElementById("d2").value);
+    let sisi = parseFloat(document.getElementById("sisiBK").value);
+    let luas = 0.5 * d1 * d2;
+    let keliling = 4 * sisi;
+    document.getElementById("hasil7").innerText = `Luas: ${luas}, Keliling: ${keliling}`;
+  }
+</script>
+
+</body>
+</html>

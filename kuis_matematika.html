@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Matematika</title>
+</head>
+<body>
+
+<h2>Kuis Matematika</h2>
+
+<form id="kuis">
+
+  <p>1. Berapa hasil dari 5 + 3?</p>
+  <input type="radio" name="soal1" value="6">6<br>
+  <input type="radio" name="soal1" value="8">8<br>
+  <input type="radio" name="soal1" value="10">10<br>
+
+  <p>2. Berapa hasil dari 10 - 4?</p>
+  <input type="radio" name="soal2" value="5">5<br>
+  <input type="radio" name="soal2" value="6">6<br>
+  <input type="radio" name="soal2" value="7">7<br>
+
+  <p>3. Berapa hasil dari 4 × 2?</p>
+  <input type="radio" name="soal3" value="6">6<br>
+  <input type="radio" name="soal3" value="8">8<br>
+  <input type="radio" name="soal3" value="10">10<br><br>
+
+  <button type="button" onclick="cekKuis()">Kirim Jawaban</button>
+
+</form>
+
+<p id="hasil"></p>
+
+<script>
+function cekKuis() {
+  let skor = 0;
+
+  const soal1 = document.querySelector('input[name="soal1"]:checked');
+  if (soal1 && soal1.value === "8") skor++;
+
+  const soal2 = document.querySelector('input[name="soal2"]:checked');
+  if (soal2 && soal2.value === "6") skor++;
+
+  const soal3 = document.querySelector('input[name="soal3"]:checked');
+  if (soal3 && soal3.value === "8") skor++;
+
+  document.getElementById("hasil").innerText = "Skor Anda: " + skor + " dari 3";
+}
+</script>
+
+</body>
+</html>

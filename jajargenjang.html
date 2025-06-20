@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <h3>Jajar Genjang</h3>
+    <input id="alasJG" placeholder="Alas" type="number">
+    <input id="tinggiJG" placeholder="Tinggi" type="number">
+    <input id="sisiJG" placeholder="Sisi Miring" type="number">
+    <button onclick="hitungJG()">Hitung</button>
+    <p id="hasil5"></p>
+  </center>
+<script>
+  function hitungJG() {
+    let a = parseFloat(document.getElementById("alasJG").value);
+    let t = parseFloat(document.getElementById("tinggiJG").value);
+    let s = parseFloat(document.getElementById("sisiJG").value);
+    let luas = a * t;
+    let keliling = 2 * (a + s);
+    document.getElementById("hasil5").innerText = `Luas: ${luas}, Keliling: ${keliling}`;
+  }
+</script>
+
+</body>
+</html>

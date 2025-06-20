@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Jam Digital</title></head>
+<body>
+  <center>
+  <h1 id="jam"></h1>
+  </center>
+  <script>
+    function updateJam() {
+      const jam = new Date().toLocaleTimeString();
+      document.getElementById("jam").innerText = jam;
+    }
+    setInterval(updateJam, 1000);
+    updateJam();
+  </script>
+</body>
+</html>

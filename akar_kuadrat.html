@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Akar Kuadrat</title>
+</head>
+<body>
+  <h2>Hitung Akar Kuadrat</h2>
+  <input type="number" id="angka" placeholder="Masukkan angka"><br><br>
+  <button onclick="akar()">Hitung</button>
+  <p id="hasil"></p>
+
+  <script>
+    function akar() {
+      let a = parseFloat(document.getElementById("angka").value);
+      let hasil = Math.sqrt(a);
+      document.getElementById("hasil").innerText = "Akar dari " + a + " = " + hasil.toFixed(2);
+    }
+  </script>
+</body>
+</html>

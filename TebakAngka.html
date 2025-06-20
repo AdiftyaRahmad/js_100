@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tebak Angka</title></head>
+<body>
+  <input id="tebakan" type="number" placeholder="Tebak 1-10">
+  <button onclick="tebak()">Tebak</button>
+  <p id="hasil"></p>
+  <script>
+    const angka = Math.floor(Math.random() * 10) + 1;
+    function tebak() {
+      const tebakan = parseInt(document.getElementById("tebakan").value);
+      const hasil = (tebakan === angka) ? "Benar!" : "Salah, coba lagi!";
+      document.getElementById("hasil").innerText = hasil;
+    }
+  </script>
+</body>
+</html>

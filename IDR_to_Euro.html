@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Konversi Rupiah ke Euro</h2>
+  <label>Masukkan Rupiah (IDR):</label><br>
+  <input type="number" id="rupiah" placeholder="Contoh: 170000"><br><br>
+  <button onclick="konversi()">Konversi</button>
+  <p id="hasil"></p>
+  <script>
+    function konversi() {
+      const kursEuro = 18.857;
+      let rupiah = parseFloat(document.getElementById("rupiah").value);
+      if (isNaN(rupiah) || rupiah < 0) {
+        document.getElementById("hasil").innerText = "Masukkan angka Rupiah yang valid.";
+        return;
+      }
+      let euro = rupiah / kursEuro;
+      document.getElementById("hasil").innerText = `Hasil: €${euro.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

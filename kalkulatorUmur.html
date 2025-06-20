@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Kalkulator Umur</title></head>
+<body>
+  <h3>Hitung Umur</h3>
+  <input id="lahir" type="number" placeholder="Tahun Lahir">
+  <button onclick="hitung()">Hitung</button>
+  <p id="umur"></p>
+  <script>
+    function hitung() {
+      let tahun = parseInt(document.getElementById('lahir').value);
+      let usia = new Date().getFullYear() - tahun;
+      document.getElementById('umur').innerText = `Usia Anda: ${usia} tahun`;
+    }
+  </script>
+</body>
+</html>

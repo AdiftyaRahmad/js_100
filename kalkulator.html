@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .kalkulator {
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .tombol {
+      width: 60px;
+      height: 40px;
+      font-size: 18px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="kalkulator">
+  <h2>Kalkulator</h2>
+  <input type="text" id="layar" disabled>
+  <br>
+  <button class="tombol" onclick="tambahAngka('7')">7</button>
+  <button class="tombol" onclick="tambahAngka('8')">8</button>
+  <button class="tombol" onclick="tambahAngka('9')">9</button>
+  <button class="tombol" onclick="tambahAngka('/')">÷</button>
+  <br>
+  <button class="tombol" onclick="tambahAngka('4')">4</button>
+  <button class="tombol" onclick="tambahAngka('5')">5</button>
+  <button class="tombol" onclick="tambahAngka('6')">6</button>
+  <button class="tombol" onclick="tambahAngka('*')">×</button>
+  <br>
+  <button class="tombol" onclick="tambahAngka('1')">1</button>
+  <button class="tombol" onclick="tambahAngka('2')">2</button>
+  <button class="tombol" onclick="tambahAngka('3')">3</button>
+  <button class="tombol" onclick="tambahAngka('-')">−</button>
+  <br>
+  <button class="tombol" onclick="tambahAngka('0')">0</button>
+  <button class="tombol" onclick="tambahAngka('.')">.</button>
+  <button class="tombol" onclick="hitung()">=</button>
+  <button class="tombol" onclick="tambahAngka('+')">+</button>
+  <br>
+  <button class="tombol" onclick="hapus()">C</button>
+</div>
+
+<script>
+  function tambahAngka(angka) {
+    document.getElementById("layar").value += angka;
+  }
+
+  function hitung() {
+    try {
+      document.getElementById("layar").value = eval(document.getElementById("layar").value);
+    } catch (e) {
+      document.getElementById("layar").value = "Error";
+    }
+  }
+
+  function hapus() {
+    document.getElementById("layar").value = "";
+  }
+</script>
+
+</body>
+</html>

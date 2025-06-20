@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <h2>Hitung Tagihan Listrik</h2>
+
+  <label>Golongan:</label><br>
+  <select id="golongan">
+    <option value="1">Golongan 1</option>
+    <option value="2">Golongan 2</option>
+  </select><br><br>
+
+  <label>Pemakaian (kWh):</label><br>
+  <input type="number" id="pemakaian"><br><br>
+
+  <button onclick="hitungTagihan()">Hitung Tagihan</button><br><br>
+
+  <p id="hasil">Bayar: Rp 0</p>
+
+  <script>
+    function hitungTagihan() {
+      var golongan = parseInt(document.getElementById("golongan").value);
+      var pemakaian = parseInt(document.getElementById("pemakaian").value);
+      var tarif = 0;
+
+      if (golongan === 1) {
+        tarif = 1000;
+      } else if (golongan === 2) {
+        tarif = 2000;
+      }
+
+      if (pemakaian < 100) {
+        pemakaian = 100;
+      }
+
+      var total = pemakaian * tarif;
+
+      if (pemakaian >= 1000) {
+        total += total * 0.10;
+      }
+
+      document.getElementById("hasil").innerText = "Bayar: Rp " + total.toLocaleString("id-ID");
+    }
+  </script>
+
+</body>
+</html>

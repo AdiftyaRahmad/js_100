@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  <title>Konversi Dollar ke Rupiah</title></title>
+</head>
+<body>
+  <h2>Konversi Dollar AS ke Rupiah</h2>
+  <label>Masukkan jumlah dalam Dollar (Usd):</label><br>
+  <input type="number" id="dollar" placeholder="Contoh: 10"><br><br>
+  <button onclick="konversi()">Konversi</button>
+  <h3>Hasil:</h3>
+  <p id="hasil"></p>
+  <script>
+    function konversi() {
+      const nilaiTukar = 16271.50;
+      let dollar = parseFloat(document.getElementById("dollar").value);
+      if (isNaN(dollar) || dollar < 0) {
+        document.getElementById("hasil").innerText = "Masukkan angka Dollar yang valid.";
+        return;
+      }
+      let rupiah = dollar * nilaiTukar;
+      document.getElementById("hasil").innerText = `Hasil konversi: Rp ${rupiah.toLocaleString("id-ID")}`;
+    }
+  </script>
+</body>
+</html>

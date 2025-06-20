@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Galon ke Liter</title></head>
+<body>
+  <h2>Konversi Galon (AS) ke Liter</h2>
+  <input type="number" id="galon" placeholder="Masukkan jumlah galon"><br><br>
+  <button onclick="konversi()">Konversi</button>
+  <p id="hasil"></p>
+
+  <script>
+    function konversi() {
+      let galon = parseFloat(document.getElementById("galon").value);
+      let liter = galon * 3.78541;
+      document.getElementById("hasil").innerText = `${galon} galon (AS) = ${liter.toFixed(4)} liter`;
+    }
+  </script>
+</body>
+</html>

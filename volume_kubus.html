@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Volume Kubus</title>
+</head>
+<body>
+  <h2>Hitung Volume Kubus</h2>
+  <input type="number" id="sisi" placeholder="Panjang sisi (cm)"><br><br>
+  <button onclick="volume()">Hitung</button>
+  <p id="hasil"></p>
+
+  <script>
+    function volume() {
+      let s = parseFloat(document.getElementById("sisi").value);
+      let v = s * s * s;
+      document.getElementById("hasil").innerText = "Volume: " + v + " cm³";
+    }
+  </script>
+</body>
+</html>

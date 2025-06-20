@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tagihan Telepon</title></head>
+<body>
+
+<h2>Tagihan Telepon</h2>
+
+<label>Menit Penggunaan:</label><br>
+<input type="number" id="menit"><br><br>
+
+<button onclick="hitungTelp()">Hitung</button><br><br>
+
+<p id="hasilTelp">Bayar: Rp 0</p>
+
+<script>
+function hitungTelp() {
+  var menit = parseInt(document.getElementById("menit").value);
+  var tarifPerMenit = 200;
+  var total = menit * tarifPerMenit;
+  if (menit > 300) {
+    total += total * 0.05; // biaya tambahan 5%
+  }
+  document.getElementById("hasilTelp").innerText = "Bayar: Rp " + total.toLocaleString("id-ID");
+}
+</script>
+
+</body>
+</html>

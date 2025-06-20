@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <h3>Lingkaran</h3>
+    <input id="jari" placeholder="Jari-jari" type="number">
+    <button onclick="hitungLingkaran()">Hitung</button>
+    <p id="hasil4"></p>
+  </center> 
+
+<script>
+  function hitungLingkaran() {
+    let r = parseFloat(document.getElementById("jari").value);
+    let luas = Math.PI * r * r;
+    let keliling = 2 * Math.PI * r;
+    document.getElementById("hasil4").innerText = `Luas: ${luas.toFixed(2)}, Keliling: ${keliling.toFixed(2)}`;
+  }
+</script>
+</body>
+</html>

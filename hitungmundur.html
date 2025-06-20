@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Hitung Mundur</title></head>
+<body>
+  <center>
+    <input id="detik" placeholder="Masukkan detik" type="number">
+    <button onclick="mulai()">Mulai</button>
+    <h1 id="timer"></h1>
+  </center>
+  <script>
+    let interval;
+    function mulai() {
+      let waktu = parseInt(document.getElementById("detik").value);
+      clearInterval(interval);
+      interval = setInterval(() => {
+        if (waktu <= 0) {
+          clearInterval(interval);
+          document.getElementById("timer").innerText = "Waktu Habis!";
+        } else {
+          document.getElementById("timer").innerText = waktu + " detik";
+          waktu--;
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
